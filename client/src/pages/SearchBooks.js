@@ -30,10 +30,19 @@ class SearchBooks extends Component {
                     throw new Error(res.data.items);
                 }
                 else {
+                    // console.log(res.data)
                     // store response in a array
-                    let results = res.data.items
+                    if ( res.data.totalItems === 0) {
+                    alert("There are no matches to your search")
+                    }
                     //map through the array 
+                    let results = res.data.items
+                    // console.log(results)
                     results = results.map(result => {
+                        // console.log(result.id)
+                        if (result.id === "_oKnzQEACAAJ") {
+                            alert("Bad data received from Google API")
+                        }
                         //store each book information in a new object 
                         result = {
                             key: result.id,

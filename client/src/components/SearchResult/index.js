@@ -3,6 +3,7 @@ import "./style.css";
 import {Row, Col} from "../Grid"
 
 const SearchResult = props => {
+    // console.log(props)
     return (props.books.length === 0) ? (
         <div className="card">
             <div className="card-body player">
